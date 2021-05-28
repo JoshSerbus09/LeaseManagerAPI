@@ -17,63 +17,52 @@ namespace LeaseManagerAPI.Data
 
         public List<BaseLeaseModel> GetAllLeases()
         {
-            using (var context = _dbContext)
-            {
-                return context.Leases?.ToList();
-            }
+            return _dbContext.Leases?.ToList();
         }
 
         public BaseLeaseModel GetLeaseById(int id)
         {
-            using (var context = _dbContext)
-            {
-                return context.Leases?.FirstOrDefault(lease => lease.Id == id);
-            }
+            return _dbContext.Leases?.FirstOrDefault(lease => lease.Id == id);
         }
 
         public BaseLeaseModel UpsertLease(BaseLeaseModel leaseToUpsert)
         {
-            using (var context = _dbContext)
+            if (leaseToUpsert.Id != null)
             {
-                if (leaseToUpsert.Id != null)
+                var existingLeaseRecord = _dbContext.Leases?.FirstOrDefault(l => l.Id == leaseToUpsert.Id);
+
+                if (existingLeaseRecord != null)
                 {
-                    var existingLeaseRecord = context.Leases?.FirstOrDefault(l => l.Id == leaseToUpsert.Id);
-
-                    if (existingLeaseRecord != null)
-                    {
-                        OverrideLeaseAttributes(existingLeaseRecord, leaseToUpsert);
-                    }
-
-                    context.SaveChanges();
-
-                    return existingLeaseRecord;
+                    OverrideLeaseAttributes(existingLeaseRecord, leaseToUpsert);
                 }
-                else
-                {
-                    leaseToUpsert.Id = (context.Leases?.Count() + 1);
-                    context.Leases.Add(leaseToUpsert);
-                    context.SaveChanges();
 
-                    return leaseToUpsert;
-                } 
+                _dbContext.SaveChanges();
+
+                return existingLeaseRecord;
+            }
+            else
+            {
+                leaseToUpsert.Id = (_dbContext.Leases?.Count() + 1);
+                _dbContext.Leases.Add(leaseToUpsert);
+                _dbContext.SaveChanges();
+
+                return leaseToUpsert;
             }
         }
 
         public bool DeleteLease(int leaseId)
         {
-            using (var context = _dbContext)
+
+            var leaseToRemove = _dbContext.Leases?.FirstOrDefault(l => l.Id == leaseId);
+
+            if (leaseToRemove != null)
             {
-                var leaseToRemove = context.Leases?.FirstOrDefault(l => l.Id == leaseId);
-
-                if (leaseToRemove != null)
-                {
-                    context.Leases.Remove(leaseToRemove);
-                    context.SaveChanges();
-                    return true;
-                }
-
-                return false;
+                _dbContext.Leases.Remove(leaseToRemove);
+                _dbContext.SaveChanges();
+                return true;
             }
+
+            return false;
         }
 
         private void OverrideLeaseAttributes(BaseLeaseModel lease1, BaseLeaseModel lease2)
