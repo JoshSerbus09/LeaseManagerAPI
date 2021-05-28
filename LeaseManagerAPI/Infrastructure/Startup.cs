@@ -34,6 +34,9 @@ namespace LeaseManagerAPI
             services.Configure<LeaseModelOptions>(_configuration.GetSection("LeaseModelOptions").Bind);
 
             var dbConnectionString = _configuration.GetConnectionString("LeaseSqliteDB");
+
+            services.AddSingleton<ILeaseDao, LeaseSqliteDao>();
+
             services.AddTransient<LeaseSqliteDbContext>();
 
             services.AddSingleton<LeaseModelValidator>();

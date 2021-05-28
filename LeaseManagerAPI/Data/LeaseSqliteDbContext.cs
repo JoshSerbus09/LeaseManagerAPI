@@ -5,14 +5,12 @@ using Microsoft.EntityFrameworkCore;
 
 namespace LeaseManagerAPI.Data
 {
-    public abstract class LeaseSqliteDbContext : DbContext
+    public class LeaseSqliteDbContext : DbContext
     {
-        public readonly Func<IDbConnection> _dbConnection;
         public DbSet<BaseLeaseModel> Leases { get; set; }
 
-        protected LeaseSqliteDbContext(Func<IDbConnection> dbConnection)
-        {
-            _dbConnection = dbConnection;
+        public LeaseSqliteDbContext()
+        {   
         }
 
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
