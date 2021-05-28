@@ -19,7 +19,7 @@ namespace LeaseManagerAPI.Data
         {
             using (var context = _dbContext)
             {
-                return context.Leases.ToList();
+                return context.Leases?.ToList();
             }
         }
 
@@ -27,7 +27,7 @@ namespace LeaseManagerAPI.Data
         {
             using (var context = _dbContext)
             {
-                return context.Leases.FirstOrDefault(lease => lease.Id == id);
+                return context.Leases?.FirstOrDefault(lease => lease.Id == id);
             }
         }
 
@@ -37,7 +37,7 @@ namespace LeaseManagerAPI.Data
             {
                 if (leaseToUpsert.Id != null)
                 {
-                    var existingLeaseRecord = context.Leases.FirstOrDefault(l => l.Id == leaseToUpsert.Id);
+                    var existingLeaseRecord = context.Leases?.FirstOrDefault(l => l.Id == leaseToUpsert.Id);
 
                     if (existingLeaseRecord != null)
                     {
@@ -50,7 +50,7 @@ namespace LeaseManagerAPI.Data
                 }
                 else
                 {
-                    leaseToUpsert.Id = (context.Leases.Count() + 1);
+                    leaseToUpsert.Id = (context.Leases?.Count() + 1);
                     context.Leases.Add(leaseToUpsert);
                     context.SaveChanges();
 
@@ -63,7 +63,7 @@ namespace LeaseManagerAPI.Data
         {
             using (var context = _dbContext)
             {
-                var leaseToRemove = context.Leases.FirstOrDefault(l => l.Id == leaseId);
+                var leaseToRemove = context.Leases?.FirstOrDefault(l => l.Id == leaseId);
 
                 if (leaseToRemove != null)
                 {
@@ -78,6 +78,11 @@ namespace LeaseManagerAPI.Data
 
         private void OverrideLeaseAttributes(BaseLeaseModel lease1, BaseLeaseModel lease2)
         {
+            if (lease1 == null || lease2 == null)
+            {
+                return;
+            }
+
             lease1.Name = lease2.Name;
             lease1.StartDate = lease2.StartDate;
             lease1.EndDate = lease2.EndDate;
