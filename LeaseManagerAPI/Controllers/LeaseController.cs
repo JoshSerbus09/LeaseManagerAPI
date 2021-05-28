@@ -2,7 +2,6 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Threading.Tasks;
 using LeaseManagerAPI.Models;
 using LeaseManagerAPI.Helpers;
 using Microsoft.Extensions.Logging;
@@ -44,7 +43,7 @@ namespace LeaseManagerAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Get")]
+        [Route("GetLeaseById")]
         public ActionResult GetLeaseById([FromQuery] int id)
         {
             _logger.LogTrace($"attempting to get lease with id '{id}'.");
@@ -66,7 +65,7 @@ namespace LeaseManagerAPI.Controllers
         }
 
         [HttpGet]
-        [Route("Get/{ids}")]
+        [Route("GetLeasesByIds")]
         public ActionResult GetLeasesByIds([FromQuery] List<int> ids)
         {
             _logger.LogTrace($"attempting to get leases by ids [{string.Join(", ", ids.Select(id => $"{id}"))}]");
@@ -97,7 +96,7 @@ namespace LeaseManagerAPI.Controllers
         }
 
         [HttpPost]
-        [Route("Post")]
+        [Route("CreateLease")]
         public ActionResult Post([FromBody] BaseLeaseModel lease)
         {
             if (lease == null)
@@ -110,7 +109,14 @@ namespace LeaseManagerAPI.Controllers
 
             try
             {
-                return Ok(_leaseDao.UpsertLease(lease));
+                if (_leaseValidotor.AreLeasePropertiesValid(lease))
+                {
+                    _logger.LogInformation($"lease properties are valid - creating lease.");
+                    return Ok(_leaseDao.UpsertLease(lease));
+                }
+
+                _logger.LogInformation($"failed to create lease - invalid property information.");
+                return StatusCode(500, $"lease properties not valid");
             }
             catch (Exception ex)
             {
@@ -120,7 +126,7 @@ namespace LeaseManagerAPI.Controllers
         }
 
         [HttpPut]
-        [Route("Put")]
+        [Route("UpdateLease")]
         public ActionResult Put([FromBody] BaseLeaseModel lease)
         {
             if (lease == null)
@@ -133,21 +139,26 @@ namespace LeaseManagerAPI.Controllers
                 _logger.LogError($"failed to update lease - invalid lease request.");
                 return StatusCode(404, $"failed to update lease - invalid lease.");
             }
-            
-            // TODO - check if record exists
 
-            if (_leaseValidotor.AreLeasePropertiesValid(lease))
+            try
             {
-                // upsert and return model
-                return Ok(lease); 
-            }
-           
+                if (_leaseValidotor.AreLeasePropertiesValid(lease))
+                {
+                    return Ok(lease);
+                }
 
-            return StatusCode(201);
+                return StatusCode(404);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"error while updating lease with id '{lease.Id}'.");
+            }
+
+            return StatusCode(500, $"error while attempting to update lease with id '{lease.Id}'");
         }
 
         [HttpDelete]
-        [Route("Delete/{leaseId}")]
+        [Route("DeleteLease")]
         public ActionResult Delete([FromQuery] int id)
         {
             if (id == null || id < 0)
@@ -172,6 +183,7 @@ namespace LeaseManagerAPI.Controllers
             }
             catch (Exception ex)
             {
+                _logger.LogError(ex, $"error while attempting to delete lease with id '{id}'.");
                 return StatusCode(500, $"error while attempting to delete lease with id '{id}'.");
             }
             _logger.LogInformation($"lease with id '{id}' successfully deleted.");

@@ -10,7 +10,7 @@ namespace LeaseManagerAPI.Models
     /// </summary>
     public class BaseLeaseModel
     {
-        [JsonIgnore]
+        [JsonProperty("Id")]
         public int? Id { get; set; }
 
         [JsonProperty("Name")]

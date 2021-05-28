@@ -3,16 +3,9 @@ using LeaseManagerAPI.Helpers;
 using LeaseManagerAPI.Models;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
-using Microsoft.AspNetCore.Mvc;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using Microsoft.Extensions.Logging;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LeaseManagerAPI
 {
@@ -35,9 +28,9 @@ namespace LeaseManagerAPI
             services.Configure<LeaseModelOptions>(_configuration.GetSection("LeaseModelOptions").Bind);
 
             services.AddSingleton(new LeaseSqliteDbContext());
-           
+
             services.AddSingleton<LeaseModelValidator>();
-           
+
             services.AddSingleton<ILeaseDao, LeaseSqliteDao>();
 
             services.AddControllers().AddNewtonsoftJson();

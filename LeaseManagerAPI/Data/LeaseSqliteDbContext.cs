@@ -16,7 +16,6 @@ namespace LeaseManagerAPI.Data
             if (!_created)
             {
                 _created = true;
-                Database.EnsureDeleted();
                 Database.EnsureCreated();
             }
         }
