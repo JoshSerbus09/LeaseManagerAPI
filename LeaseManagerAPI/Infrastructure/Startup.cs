@@ -29,10 +29,12 @@ namespace LeaseManagerAPI
             // register infrastructure
             services.AddCors(options =>
             {
-                options.AddPolicy("AllowedOrigins", builder =>
-                {
-                    builder.WithOrigins("http://localhost:3000");
-                });
+                options.AddPolicy(name: "AllowedOrigins", builder =>
+                    {
+                        builder.WithOrigins("http://localhost:3000")
+                            .AllowAnyHeader()
+                            .AllowAnyMethod();
+                    });
             });
 
             // register db storage
