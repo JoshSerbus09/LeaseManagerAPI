@@ -2,10 +2,12 @@ using LeaseManagerAPI.Data;
 using LeaseManagerAPI.Helpers;
 using LeaseManagerAPI.Models;
 using Microsoft.AspNetCore.Builder;
+using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
+using System.Collections.Generic;
 
 namespace LeaseManagerAPI
 {
@@ -18,23 +20,31 @@ namespace LeaseManagerAPI
             _configuration = configuration;
         }
 
-        public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
-
+            // register EF Sqlite --> FIRST <--
             services.AddEntityFrameworkSqlite();
-            services.Configure<LeaseModelOptions>(_configuration.GetSection("LeaseModelOptions").Bind);
 
+            // register infrastructure
+            services.AddCors(options =>
+            {
+                options.AddPolicy("AllowedOrigins", builder =>
+                {
+                    builder.WithOrigins("http://localhost:3000");
+                });
+            });
+
+            // register db storage
+            services.Configure<LeaseModelOptions>(_configuration.GetSection("LeaseModelOptions").Bind);
             services.AddSingleton(new LeaseSqliteDbContext());
 
+            // register lease data classes
             services.AddSingleton<LeaseModelValidator>();
-
             services.AddSingleton<ILeaseDao, LeaseSqliteDao>();
 
+            // register swagger gen & UI
             services.AddControllers().AddNewtonsoftJson();
-
             services.AddSwaggerGen(configuration =>
             {
                 configuration.SwaggerDoc("v1", new Microsoft.OpenApi.Models.OpenApiInfo
@@ -44,7 +54,6 @@ namespace LeaseManagerAPI
                     Description = "Lease Management Web API for Create, Read, Update, and Delete operations."
                 });
             });
-
             services.AddSwaggerGenNewtonsoftSupport();
         }
 
@@ -63,6 +72,8 @@ namespace LeaseManagerAPI
             app.UseRouting();
 
             app.UseAuthorization();
+
+            app.UseCors("AllowedOrigins");
 
             app.UseSwagger();
             app.UseSwaggerUI(c =>

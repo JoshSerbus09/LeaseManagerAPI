@@ -27,7 +27,7 @@ namespace LeaseManagerAPI.Data
 
         public BaseLeaseModel UpsertLease(BaseLeaseModel leaseToUpsert)
         {
-            if (leaseToUpsert.Id != null)
+            if (leaseToUpsert.Id != null && leaseToUpsert.Id > 0)
             {
                 var existingLeaseRecord = _dbContext.Leases?.FirstOrDefault(l => l.Id == leaseToUpsert.Id);
 
@@ -52,6 +52,10 @@ namespace LeaseManagerAPI.Data
 
         public bool DeleteLease(int leaseId)
         {
+            if (leaseId == null || leaseId < 0)
+            {
+                return false;
+            }
 
             var leaseToRemove = _dbContext.Leases?.FirstOrDefault(l => l.Id == leaseId);
 

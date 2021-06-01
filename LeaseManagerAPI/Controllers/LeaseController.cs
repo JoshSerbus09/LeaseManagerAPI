@@ -61,7 +61,6 @@ namespace LeaseManagerAPI.Controllers
                 _logger.LogError(ex, $"failed to get lease with id '{id}'.");
                 return StatusCode(500, $"error while attempting to get lease with id '{id}'.");
             }
-            return StatusCode(201, id);
         }
 
         [HttpGet]

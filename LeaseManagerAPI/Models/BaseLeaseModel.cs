@@ -16,19 +16,19 @@ namespace LeaseManagerAPI.Models
         [JsonProperty("Name")]
         public string Name { get; set; }
 
-        [JsonProperty("Start Date")]
+        [JsonProperty("StartDate")]
         public DateTime StartDate { get; set; }
 
-        [JsonProperty("End Date")]
+        [JsonProperty("EndDate")]
         public DateTime EndDate { get; set; }
 
-        [JsonProperty("Payment Amount")]
+        [JsonProperty("PaymentAmount")]
         public decimal PaymentAmount { get; set; }
 
-        [JsonProperty("# of Payments")]
+        [JsonProperty("NumPayments")]
         public int NumPayments { get; set; }
 
-        [JsonProperty("Interest Rate")]
+        [JsonProperty("InterestRate")]
         public decimal InterestRate { get; set; }
 
         [JsonProperty("Notes")]
