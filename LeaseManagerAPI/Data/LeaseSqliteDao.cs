@@ -52,7 +52,7 @@ namespace LeaseManagerAPI.Data
 
         public bool DeleteLease(int leaseId)
         {
-            if (leaseId == null || leaseId < 0)
+            if (leaseId < 0)
             {
                 return false;
             }
