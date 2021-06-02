@@ -1,8 +1,5 @@
 ﻿using LeaseManagerAPI.Models;
-using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
 
 namespace LeaseManagerAPI.Data
 {
@@ -13,6 +10,8 @@ namespace LeaseManagerAPI.Data
         BaseLeaseModel GetLeaseById(int id);
 
         BaseLeaseModel UpsertLease(BaseLeaseModel lease);
+
+        List<BaseLeaseModel> UpsertLeases(List<BaseLeaseModel> leases);
 
         bool DeleteLease(int id);
     }

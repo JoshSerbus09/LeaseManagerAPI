@@ -9,5 +9,6 @@ namespace LeaseManagerAPI.Models
     {
         public decimal MinimumLeasePaymentAmount { get; set; }
         public decimal MaximumLeasePaymentAmount { get; set; }
+        public decimal MaximumInterestRate { get; set; }
     }
 }

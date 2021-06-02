@@ -27,7 +27,7 @@ namespace LeaseManagerAPI.Data
 
         public BaseLeaseModel UpsertLease(BaseLeaseModel leaseToUpsert)
         {
-            if (leaseToUpsert.Id != null && leaseToUpsert.Id > 0)
+            if (leaseToUpsert.Id > 0)
             {
                 var existingLeaseRecord = _dbContext.Leases?.FirstOrDefault(l => l.Id == leaseToUpsert.Id);
 
@@ -42,12 +42,40 @@ namespace LeaseManagerAPI.Data
             }
             else
             {
-                leaseToUpsert.Id = (_dbContext.Leases?.Count() + 1);
                 _dbContext.Leases.Add(leaseToUpsert);
                 _dbContext.SaveChanges();
 
                 return leaseToUpsert;
             }
+        }
+
+        public List<BaseLeaseModel> UpsertLeases(List<BaseLeaseModel> leases)
+        {
+            var savedLeases = new List<BaseLeaseModel>();
+            foreach (var lease in leases)
+            {
+                if (lease.Id > 0)
+                {
+                    var existingLeaseRecord = _dbContext.Leases?.FirstOrDefault(l => l.Id == lease.Id);
+
+                    if (existingLeaseRecord != null)
+                    {
+                        OverrideLeaseAttributes(existingLeaseRecord, lease);
+                    }
+
+                    _dbContext.SaveChanges();
+                }
+                else
+                {
+                    _dbContext.Leases.Add(lease);
+                    _dbContext.SaveChanges();
+
+                    savedLeases.Add(lease);
+
+                }
+            }
+
+            return leases;
         }
 
         public bool DeleteLease(int leaseId)

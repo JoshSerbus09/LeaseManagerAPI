@@ -9,6 +9,7 @@ using LeaseManagerAPI.Data;
 
 namespace LeaseManagerAPI.Controllers
 {
+    [ApiController]
     public class LeaseController : Controller
     {
         private readonly ILeaseDao _leaseDao;
@@ -21,8 +22,7 @@ namespace LeaseManagerAPI.Controllers
             _logger = logger;
         }
 
-        [HttpGet]
-        [Route("GetAllLeases")]
+        [HttpGet("GetAllLeases")]
         public ActionResult GetLeases()
         {
             _logger.LogTrace($"attempting to get all leases.");
@@ -42,8 +42,7 @@ namespace LeaseManagerAPI.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("GetLeaseById")]
+        [HttpGet("GetLeaseById")]
         public ActionResult GetLeaseById([FromQuery] int id)
         {
             _logger.LogTrace($"attempting to get lease with id '{id}'.");
@@ -63,8 +62,7 @@ namespace LeaseManagerAPI.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("GetLeasesByIds")]
+        [HttpGet("GetLeasesByIds")]
         public ActionResult GetLeasesByIds([FromQuery] List<int> ids)
         {
             _logger.LogTrace($"attempting to get leases by ids [{string.Join(", ", ids.Select(id => $"{id}"))}]");
@@ -94,9 +92,8 @@ namespace LeaseManagerAPI.Controllers
             }
         }
 
-        [HttpPost]
-        [Route("CreateLease")]
-        public ActionResult Post([FromBody] BaseLeaseModel lease)
+        [HttpPost("CreateLease")]
+        public ActionResult<BaseLeaseModel> Post([FromBody] BaseLeaseModel lease)
         {
             if (lease == null)
             {
@@ -115,7 +112,7 @@ namespace LeaseManagerAPI.Controllers
                 }
 
                 _logger.LogInformation($"failed to create lease - invalid property information.");
-                return StatusCode(500, $"lease properties not valid");
+                return StatusCode(500, $"could not create lease - lease properties not valid");
             }
             catch (Exception ex)
             {
@@ -124,8 +121,36 @@ namespace LeaseManagerAPI.Controllers
             }
         }
 
-        [HttpPut]
-        [Route("UpdateLease")]
+        [HttpPost("CreateLeases")]
+        public ActionResult<List<BaseLeaseModel>> Post([FromBody] List<BaseLeaseModel> leases)
+        {
+            if (leases == null || leases.Count == 0)
+            {
+                _logger.LogError($"invalid lease model request");
+                return StatusCode(400, $"error while attempting to save lease.");
+            }
+
+            if (leases.Any(lease => !_leaseValidotor.AreLeasePropertiesValid(lease)))
+            {
+                _logger.LogError($"request contained invalid leases");
+                return StatusCode(400, $"lease properties invalid - no leases were imported");
+            }
+
+            try
+            {
+                _logger.LogInformation($"lease properties are valid - creating lease.");
+                _leaseDao.UpsertLeases(leases);
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex, $"failed to save leases.");
+                return StatusCode(500, $"error while attempting to save leases'");
+            }
+
+            return Ok(leases);
+        }
+
+        [HttpPut("UpdateLease")]
         public ActionResult Put([FromBody] BaseLeaseModel lease)
         {
             if (lease == null)
@@ -156,11 +181,10 @@ namespace LeaseManagerAPI.Controllers
             return StatusCode(500, $"error while attempting to update lease with id '{lease.Id}'");
         }
 
-        [HttpDelete]
-        [Route("DeleteLease")]
+        [HttpDelete("DeleteLease")]
         public ActionResult Delete([FromQuery] int id)
         {
-            if (id == null || id < 0)
+            if (id < 0)
             {
                 _logger.LogError($"failed to delete lease - invalid lease request.");
                 return StatusCode(400, $"failed to delete lease - invalid lease.");

@@ -2,12 +2,10 @@ using LeaseManagerAPI.Data;
 using LeaseManagerAPI.Helpers;
 using LeaseManagerAPI.Models;
 using Microsoft.AspNetCore.Builder;
-using Microsoft.AspNetCore.Cors.Infrastructure;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
-using System.Collections.Generic;
 
 namespace LeaseManagerAPI
 {

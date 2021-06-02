@@ -1,6 +1,8 @@
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
+using NLog.Web;
+using System;
 
 namespace LeaseManagerAPI
 {
@@ -8,7 +10,21 @@ namespace LeaseManagerAPI
     {
         public static void Main(string[] args)
         {
-            CreateHostBuilder(args).Build().Run();
+            var nLog = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
+
+            try
+            {
+                CreateHostBuilder(args).Build().Run();
+            }
+            catch (Exception ex)
+            {
+                nLog.Error($"unable to start program\n - {ex}");
+                throw;
+            }
+            finally
+            { 
+                nLog.Factory.Shutdown(); 
+            }
         }
 
         public static IHostBuilder CreateHostBuilder(string[] args) =>
@@ -16,10 +32,12 @@ namespace LeaseManagerAPI
                 .ConfigureWebHostDefaults(webBuilder =>
                 {
                     webBuilder.UseStartup<Startup>();
-                }).ConfigureLogging(log =>
+                })
+                .ConfigureLogging(log =>
                 {
                     log.ClearProviders();
                     log.SetMinimumLevel(LogLevel.Trace);
-                });
+                })
+                .UseNLog();
     }
 }

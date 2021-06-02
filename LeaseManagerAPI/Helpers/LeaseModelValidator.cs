@@ -28,7 +28,8 @@ namespace LeaseManagerAPI.Helpers
 
             return IsDateRangeValid(lease)
                 && IsPaymentScheduleValid(lease)
-                && ArePaymentTermsValid(lease);
+                && ArePaymentTermsValid(lease)
+                && IsInterestRateValid(lease);
         }
 
         /// <summary>
@@ -36,8 +37,9 @@ namespace LeaseManagerAPI.Helpers
         /// </summary>
         private bool IsDateRangeValid(BaseLeaseModel lease)
         {
-            if (lease.EndDate > lease.StartDate)
+            if (lease.EndDate >= lease.StartDate)
             {
+                _logger.LogInformation($"lease with name '{lease.Name}' has a valid date range");
                 return true;
             }
 
@@ -50,7 +52,25 @@ namespace LeaseManagerAPI.Helpers
         /// </summary>
         private bool IsPaymentScheduleValid(BaseLeaseModel lease)
         {
-            return (lease.EndDate.Month - lease.StartDate.Month) >= lease.NumPayments;
+
+            if (lease.NumPayments > 0 
+                && GetMonthDurationOfLease(lease.StartDate, lease.EndDate) >= lease.NumPayments)
+            {
+                _logger.LogInformation($"lease with name '{lease.Name}' has a valid number of payments");
+                return true;
+
+            }
+            _logger.LogError($"invalid number of payments {lease.Name}. number of payments should be less than or equal to the number of months in the lease.");
+
+            return false; ;
+        }
+
+        private int GetMonthDurationOfLease(DateTime begin, DateTime end)
+        {
+            var startDateMonths = (begin.Year * 12) + begin.Month - 1; // subtract a month from the lease start for 0 index
+            var endDateMonths = (end.Year * 12) + end.Month;
+
+            return endDateMonths - startDateMonths;
         }
 
         /// <summary>
@@ -58,8 +78,31 @@ namespace LeaseManagerAPI.Helpers
         /// </summary>
         private bool ArePaymentTermsValid(BaseLeaseModel lease)
         {
-            return lease.PaymentAmount > _leaseModelOptions.CurrentValue.MinimumLeasePaymentAmount
-                && lease.PaymentAmount < _leaseModelOptions.CurrentValue.MaximumLeasePaymentAmount;
+            
+            if (lease.PaymentAmount > _leaseModelOptions.CurrentValue.MinimumLeasePaymentAmount
+                && lease.PaymentAmount < _leaseModelOptions.CurrentValue.MaximumLeasePaymentAmount)
+            {
+                _logger.LogInformation($"lease with name '{lease.Name}' has a valid payment amount");
+                return true;
+            }
+
+            return false;
+        }
+
+        /// <summary>
+        ///     The lease interest rate is between 0 and configured max interest rate %
+        /// </summary>
+        /// <param name="lease"></param>
+        /// <returns></returns>
+        private bool IsInterestRateValid(BaseLeaseModel lease)
+        {
+            if (lease.InterestRate > 0 && lease.InterestRate <= _leaseModelOptions.CurrentValue.MaximumInterestRate)
+            {
+                _logger.LogInformation($"lease with name '{lease.Name}' has a valid interest rate");
+                return true;
+            }
+
+            return false;
         }
     }
 }
