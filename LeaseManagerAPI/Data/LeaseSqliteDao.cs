@@ -17,7 +17,7 @@ namespace LeaseManagerAPI.Data
 
         public List<BaseLeaseModel> GetAllLeases()
         {
-            return _dbContext.Leases?.ToList();
+            return _dbContext.Leases?.OrderBy(lease => lease.StartDate).ToList();
         }
 
         public BaseLeaseModel GetLeaseById(int id)

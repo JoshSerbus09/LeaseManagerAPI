@@ -14381,3 +14381,725 @@
 2021-06-02 18:14:25.4987 Debug Error => fileTarget
 2021-06-02 18:14:25.4987 Debug Fatal => fileTarget
 2021-06-02 18:14:41.4713 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:38:08.9116 Info Message Template Auto Format enabled
+2021-06-02 18:38:08.9190 Info Loading assembly: Nlog.Web.AspNetCore
+2021-06-02 18:38:08.9190 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-06-02 18:38:08.9326 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9326 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-06-02 18:38:08.9326 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-06-02 18:38:08.9326 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-06-02 18:38:08.9326 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9326 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:08.9326 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9326 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:38:08.9326 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-06-02 18:38:08.9326 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-06-02 18:38:08.9443 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:08.9443 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:08.9443 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9443 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:38:08.9443 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9443 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:38:08.9443 Debug Setting 'NLog.Targets.FileTarget.name' to 'fileTarget'
+2021-06-02 18:38:08.9443 Debug Setting 'NLog.Targets.FileTarget.fileName' to '${basedir}/logs/logfile.txt'
+2021-06-02 18:38:08.9443 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9443 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2021-06-02 18:38:08.9443 Debug Setting 'NLog.Targets.FileTarget.maxArchiveFiles' to '4'
+2021-06-02 18:38:08.9443 Debug Setting 'NLog.Targets.FileTarget.archiveEvery' to 'Day'
+2021-06-02 18:38:08.9598 Debug Setting 'NLog.Targets.FileTarget.layout' to '${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'
+2021-06-02 18:38:08.9598 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9598 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-06-02 18:38:08.9598 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.Inner' to '${level}'
+2021-06-02 18:38:08.9598 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9598 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:08.9598 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9598 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:38:08.9598 Trace  Scanning Property Inner ''${level}'' NLog.Layouts
+2021-06-02 18:38:08.9598 Trace  Scanning SimpleLayout ''${level}''
+2021-06-02 18:38:08.9598 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:08.9598 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:08.9598 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9598 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:38:08.9598 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9598 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:38:08.9598 Debug Setting 'NLog.LayoutRenderers.ExceptionLayoutRenderer.format' to 'tostring'
+2021-06-02 18:38:08.9598 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:08.9598 Trace Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2021-06-02 18:38:08.9754 Trace  Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2021-06-02 18:38:08.9754 Info Adding target FileTarget(Name=fileTarget)
+2021-06-02 18:38:08.9754 Debug Registered target fileTarget: NLog.Targets.FileTarget
+2021-06-02 18:38:08.9754 Trace ParseRulesElement
+2021-06-02 18:38:08.9920 Debug Watching path 'C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1' filter 'NLog.config' for changes.
+2021-06-02 18:38:08.9920 Debug --- NLog configuration dump ---
+2021-06-02 18:38:08.9920 Debug Targets:
+2021-06-02 18:38:08.9920 Debug File Target[fileTarget]
+2021-06-02 18:38:08.9920 Debug Rules:
+2021-06-02 18:38:08.9920 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ fileTarget ]
+2021-06-02 18:38:08.9920 Debug --- End of NLog configuration dump ---
+2021-06-02 18:38:08.9920 Trace FindReachableObject<System.Object>:
+2021-06-02 18:38:08.9920 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ fileTarget ]'
+2021-06-02 18:38:08.9920 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-06-02 18:38:08.9920 Trace  Scanning FileTarget 'File Target[fileTarget]'
+2021-06-02 18:38:08.9920 Trace   Scanning Property FileName ''${basedir}/logs/logfile.txt'' NLog.Layouts
+2021-06-02 18:38:08.9920 Trace   Scanning SimpleLayout ''${basedir}/logs/logfile.txt''
+2021-06-02 18:38:08.9920 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:08.9920 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:08.9920 Trace   Scanning Property Layout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'' NLog.Layouts
+2021-06-02 18:38:09.0064 Trace   Scanning SimpleLayout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}''
+2021-06-02 18:38:09.0064 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:09.0064 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-06-02 18:38:09.0064 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0064 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:38:09.0064 Trace     Scanning Property Inner ''${level}'' NLog.Layouts
+2021-06-02 18:38:09.0064 Trace     Scanning SimpleLayout ''${level}''
+2021-06-02 18:38:09.0064 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:09.0064 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:09.0064 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0064 Trace    Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:38:09.0064 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0064 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:38:09.0064 Trace    Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2021-06-02 18:38:09.0064 Trace     Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2021-06-02 18:38:09.0064 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-06-02 18:38:09.0064 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-06-02 18:38:09.0064 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-06-02 18:38:09.0064 Info Validating config: TargetNames=fileTarget, ConfigItems=15, FilePath=C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\NLog.config
+2021-06-02 18:38:09.0064 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-06-02 18:38:09.0263 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${exception}
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${message}
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${logger}
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${level}
+2021-06-02 18:38:09.0263 Trace Initializing '${level}'
+2021-06-02 18:38:09.0263 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:09.0263 Trace Scanning SimpleLayout ''${level}''
+2021-06-02 18:38:09.0263 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:09.0263 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:09.0263 Trace Initializing Layout Renderer: ${uppercase}
+2021-06-02 18:38:09.0384 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:38:09.0384 Trace Initializing Layout Renderer: ${shortdate}
+2021-06-02 18:38:09.0384 Trace Initializing '${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'
+2021-06-02 18:38:09.0384 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:09.0384 Trace Scanning SimpleLayout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}''
+2021-06-02 18:38:09.0384 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:09.0384 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-06-02 18:38:09.0384 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0384 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:38:09.0384 Trace   Scanning Property Inner ''${level}'' NLog.Layouts
+2021-06-02 18:38:09.0384 Trace   Scanning SimpleLayout ''${level}''
+2021-06-02 18:38:09.0384 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:09.0384 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:38:09.0384 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0384 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:38:09.0384 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0384 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:38:09.0384 Trace  Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2021-06-02 18:38:09.0384 Trace   Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2021-06-02 18:38:09.0384 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:38:09.0384 Trace Initializing '${basedir}/logs/logfile.txt'
+2021-06-02 18:38:09.0384 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:38:09.0384 Trace Scanning SimpleLayout ''${basedir}/logs/logfile.txt''
+2021-06-02 18:38:09.0384 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:38:09.0384 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:38:09.0384 Trace Initializing File Target[fileTarget]
+2021-06-02 18:38:09.0384 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-06-02 18:38:09.0384 Trace Scanning FileTarget 'File Target[fileTarget]'
+2021-06-02 18:38:09.0384 Trace  Scanning Property FileName ''${basedir}/logs/logfile.txt'' NLog.Layouts
+2021-06-02 18:38:09.0384 Trace  Scanning SimpleLayout ''${basedir}/logs/logfile.txt''
+2021-06-02 18:38:09.0384 Trace  Scanning Property Layout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'' NLog.Layouts
+2021-06-02 18:38:09.0384 Trace  Scanning SimpleLayout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}''
+2021-06-02 18:38:09.0384 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-06-02 18:38:09.0530 Trace File Target[fileTarget] has 2 layouts
+2021-06-02 18:38:09.0530 Trace FileTarget(Name=fileTarget): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-06-02 18:38:09.0530 Debug Targets for LeaseManagerAPI.Program by level:
+2021-06-02 18:38:09.0530 Debug Trace => fileTarget
+2021-06-02 18:38:09.0530 Debug Debug => fileTarget
+2021-06-02 18:38:09.0530 Debug Info => fileTarget
+2021-06-02 18:38:09.0530 Debug Warn => fileTarget
+2021-06-02 18:38:09.0530 Debug Error => fileTarget
+2021-06-02 18:38:09.0530 Debug Fatal => fileTarget
+2021-06-02 18:38:09.5765 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-06-02 18:38:09.5860 Debug Hide assemblies for callsite
+2021-06-02 18:38:09.5860 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-06-02 18:38:09.5860 Debug Targets for Microsoft.Extensions.Hosting.Internal.ApplicationLifetime by level:
+2021-06-02 18:38:09.5860 Debug Trace => fileTarget
+2021-06-02 18:38:09.5860 Debug Debug => fileTarget
+2021-06-02 18:38:09.5860 Debug Info => fileTarget
+2021-06-02 18:38:09.5860 Debug Warn => fileTarget
+2021-06-02 18:38:09.5860 Debug Error => fileTarget
+2021-06-02 18:38:09.5860 Debug Fatal => fileTarget
+2021-06-02 18:38:09.5860 Debug Targets for Microsoft.Extensions.Hosting.Internal.Host by level:
+2021-06-02 18:38:09.5860 Debug Trace => fileTarget
+2021-06-02 18:38:09.5860 Debug Debug => fileTarget
+2021-06-02 18:38:09.5860 Debug Info => fileTarget
+2021-06-02 18:38:09.5860 Debug Warn => fileTarget
+2021-06-02 18:38:09.5860 Debug Error => fileTarget
+2021-06-02 18:38:09.5860 Debug Fatal => fileTarget
+2021-06-02 18:38:09.5860 Debug Targets for Microsoft.Hosting.Lifetime by level:
+2021-06-02 18:38:09.5860 Debug Trace => fileTarget
+2021-06-02 18:38:09.6006 Debug Debug => fileTarget
+2021-06-02 18:38:09.6006 Debug Info => fileTarget
+2021-06-02 18:38:09.6006 Debug Warn => fileTarget
+2021-06-02 18:38:09.6006 Debug Error => fileTarget
+2021-06-02 18:38:09.6006 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6006 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2021-06-02 18:38:09.6006 Debug Trace => fileTarget
+2021-06-02 18:38:09.6006 Debug Debug => fileTarget
+2021-06-02 18:38:09.6006 Debug Info => fileTarget
+2021-06-02 18:38:09.6006 Debug Warn => fileTarget
+2021-06-02 18:38:09.6006 Debug Error => fileTarget
+2021-06-02 18:38:09.6006 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6006 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2021-06-02 18:38:09.6006 Debug Trace => fileTarget
+2021-06-02 18:38:09.6006 Debug Debug => fileTarget
+2021-06-02 18:38:09.6006 Debug Info => fileTarget
+2021-06-02 18:38:09.6006 Debug Warn => fileTarget
+2021-06-02 18:38:09.6006 Debug Error => fileTarget
+2021-06-02 18:38:09.6006 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6006 Debug Targets for Microsoft.AspNetCore.Hosting.Diagnostics by level:
+2021-06-02 18:38:09.6006 Debug Trace => fileTarget
+2021-06-02 18:38:09.6006 Debug Debug => fileTarget
+2021-06-02 18:38:09.6006 Debug Info => fileTarget
+2021-06-02 18:38:09.6006 Debug Warn => fileTarget
+2021-06-02 18:38:09.6006 Debug Error => fileTarget
+2021-06-02 18:38:09.6006 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6243 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2021-06-02 18:38:09.6243 Debug Trace => fileTarget
+2021-06-02 18:38:09.6243 Debug Debug => fileTarget
+2021-06-02 18:38:09.6243 Debug Info => fileTarget
+2021-06-02 18:38:09.6243 Debug Warn => fileTarget
+2021-06-02 18:38:09.6243 Debug Error => fileTarget
+2021-06-02 18:38:09.6243 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6243 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter by level:
+2021-06-02 18:38:09.6243 Debug Trace => fileTarget
+2021-06-02 18:38:09.6243 Debug Debug => fileTarget
+2021-06-02 18:38:09.6243 Debug Info => fileTarget
+2021-06-02 18:38:09.6243 Debug Warn => fileTarget
+2021-06-02 18:38:09.6243 Debug Error => fileTarget
+2021-06-02 18:38:09.6243 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6374 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter by level:
+2021-06-02 18:38:09.6374 Debug Trace => fileTarget
+2021-06-02 18:38:09.6374 Debug Debug => fileTarget
+2021-06-02 18:38:09.6374 Debug Info => fileTarget
+2021-06-02 18:38:09.6374 Debug Warn => fileTarget
+2021-06-02 18:38:09.6374 Debug Error => fileTarget
+2021-06-02 18:38:09.6374 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6374 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter by level:
+2021-06-02 18:38:09.6374 Debug Trace => fileTarget
+2021-06-02 18:38:09.6374 Debug Debug => fileTarget
+2021-06-02 18:38:09.6374 Debug Info => fileTarget
+2021-06-02 18:38:09.6374 Debug Warn => fileTarget
+2021-06-02 18:38:09.6374 Debug Error => fileTarget
+2021-06-02 18:38:09.6374 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6691 Debug Targets for Microsoft.AspNetCore.Routing.EndpointMiddleware by level:
+2021-06-02 18:38:09.6691 Debug Trace => fileTarget
+2021-06-02 18:38:09.6691 Debug Debug => fileTarget
+2021-06-02 18:38:09.6691 Debug Info => fileTarget
+2021-06-02 18:38:09.6691 Debug Warn => fileTarget
+2021-06-02 18:38:09.6691 Debug Error => fileTarget
+2021-06-02 18:38:09.6691 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6691 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2021-06-02 18:38:09.6691 Debug Trace => fileTarget
+2021-06-02 18:38:09.6691 Debug Debug => fileTarget
+2021-06-02 18:38:09.6691 Debug Info => fileTarget
+2021-06-02 18:38:09.6691 Debug Warn => fileTarget
+2021-06-02 18:38:09.6691 Debug Error => fileTarget
+2021-06-02 18:38:09.6691 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6830 Debug Targets for Microsoft.AspNetCore.Cors.Infrastructure.CorsService by level:
+2021-06-02 18:38:09.6830 Debug Trace => fileTarget
+2021-06-02 18:38:09.6830 Debug Debug => fileTarget
+2021-06-02 18:38:09.6830 Debug Info => fileTarget
+2021-06-02 18:38:09.6830 Debug Warn => fileTarget
+2021-06-02 18:38:09.6830 Debug Error => fileTarget
+2021-06-02 18:38:09.6830 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6830 Debug Targets for Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware by level:
+2021-06-02 18:38:09.6830 Debug Trace => fileTarget
+2021-06-02 18:38:09.6830 Debug Debug => fileTarget
+2021-06-02 18:38:09.6830 Debug Info => fileTarget
+2021-06-02 18:38:09.6830 Debug Warn => fileTarget
+2021-06-02 18:38:09.6830 Debug Error => fileTarget
+2021-06-02 18:38:09.6830 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6830 Debug Targets for Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware by level:
+2021-06-02 18:38:09.6830 Debug Trace => fileTarget
+2021-06-02 18:38:09.6830 Debug Debug => fileTarget
+2021-06-02 18:38:09.6830 Debug Info => fileTarget
+2021-06-02 18:38:09.6830 Debug Warn => fileTarget
+2021-06-02 18:38:09.6830 Debug Error => fileTarget
+2021-06-02 18:38:09.6830 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6830 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2021-06-02 18:38:09.6830 Debug Trace => fileTarget
+2021-06-02 18:38:09.6830 Debug Debug => fileTarget
+2021-06-02 18:38:09.6830 Debug Info => fileTarget
+2021-06-02 18:38:09.6830 Debug Warn => fileTarget
+2021-06-02 18:38:09.6830 Debug Error => fileTarget
+2021-06-02 18:38:09.6830 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6830 Debug Targets for Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware by level:
+2021-06-02 18:38:09.6943 Debug Trace => fileTarget
+2021-06-02 18:38:09.6943 Debug Debug => fileTarget
+2021-06-02 18:38:09.6943 Debug Info => fileTarget
+2021-06-02 18:38:09.6943 Debug Warn => fileTarget
+2021-06-02 18:38:09.6943 Debug Error => fileTarget
+2021-06-02 18:38:09.6943 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6943 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2021-06-02 18:38:09.6943 Debug Trace => fileTarget
+2021-06-02 18:38:09.6943 Debug Debug => fileTarget
+2021-06-02 18:38:09.6943 Debug Info => fileTarget
+2021-06-02 18:38:09.6943 Debug Warn => fileTarget
+2021-06-02 18:38:09.6943 Debug Error => fileTarget
+2021-06-02 18:38:09.6943 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6943 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2021-06-02 18:38:09.6943 Debug Trace => fileTarget
+2021-06-02 18:38:09.6943 Debug Debug => fileTarget
+2021-06-02 18:38:09.6943 Debug Info => fileTarget
+2021-06-02 18:38:09.6943 Debug Warn => fileTarget
+2021-06-02 18:38:09.6943 Debug Error => fileTarget
+2021-06-02 18:38:09.6943 Debug Fatal => fileTarget
+2021-06-02 18:38:09.6943 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2021-06-02 18:38:09.6943 Debug Trace => fileTarget
+2021-06-02 18:38:09.6943 Debug Debug => fileTarget
+2021-06-02 18:38:09.6943 Debug Info => fileTarget
+2021-06-02 18:38:09.6943 Debug Warn => fileTarget
+2021-06-02 18:38:09.6943 Debug Error => fileTarget
+2021-06-02 18:38:09.6943 Debug Fatal => fileTarget
+2021-06-02 18:38:09.7326 Debug FileTarget(Name=fileTarget): Preparing for new file 'C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt'
+2021-06-02 18:38:09.7326 Trace FileTarget: extracted sequenceNumber: 0 from file 'C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\logs\logfile.txt'
+2021-06-02 18:38:09.7449 Debug Creating file appender: C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt
+2021-06-02 18:38:09.7449 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:38:09.7449 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:38:09.7449 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:38:09.7449 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:38:09.9867 Debug Targets for Microsoft.AspNetCore.Routing.Matching.DfaMatcher by level:
+2021-06-02 18:38:09.9867 Debug Trace => fileTarget
+2021-06-02 18:38:09.9867 Debug Debug => fileTarget
+2021-06-02 18:38:09.9867 Debug Info => fileTarget
+2021-06-02 18:38:09.9867 Debug Warn => fileTarget
+2021-06-02 18:38:09.9867 Debug Error => fileTarget
+2021-06-02 18:38:09.9867 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0037 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2021-06-02 18:38:10.0037 Debug Trace => fileTarget
+2021-06-02 18:38:10.0037 Debug Debug => fileTarget
+2021-06-02 18:38:10.0037 Debug Info => fileTarget
+2021-06-02 18:38:10.0037 Debug Warn => fileTarget
+2021-06-02 18:38:10.0037 Debug Error => fileTarget
+2021-06-02 18:38:10.0037 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0083 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2021-06-02 18:38:10.0083 Debug Trace => fileTarget
+2021-06-02 18:38:10.0083 Debug Debug => fileTarget
+2021-06-02 18:38:10.0083 Debug Info => fileTarget
+2021-06-02 18:38:10.0083 Debug Warn => fileTarget
+2021-06-02 18:38:10.0083 Debug Error => fileTarget
+2021-06-02 18:38:10.0083 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0083 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker by level:
+2021-06-02 18:38:10.0083 Debug Trace => fileTarget
+2021-06-02 18:38:10.0083 Debug Debug => fileTarget
+2021-06-02 18:38:10.0083 Debug Info => fileTarget
+2021-06-02 18:38:10.0083 Debug Warn => fileTarget
+2021-06-02 18:38:10.0083 Debug Error => fileTarget
+2021-06-02 18:38:10.0083 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0083 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter by level:
+2021-06-02 18:38:10.0083 Debug Trace => fileTarget
+2021-06-02 18:38:10.0083 Debug Debug => fileTarget
+2021-06-02 18:38:10.0083 Debug Info => fileTarget
+2021-06-02 18:38:10.0083 Debug Warn => fileTarget
+2021-06-02 18:38:10.0083 Debug Error => fileTarget
+2021-06-02 18:38:10.0083 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0083 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter by level:
+2021-06-02 18:38:10.0083 Debug Trace => fileTarget
+2021-06-02 18:38:10.0083 Debug Debug => fileTarget
+2021-06-02 18:38:10.0083 Debug Info => fileTarget
+2021-06-02 18:38:10.0083 Debug Warn => fileTarget
+2021-06-02 18:38:10.0083 Debug Error => fileTarget
+2021-06-02 18:38:10.0083 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0083 Debug Targets for LeaseManagerAPI.Helpers.LeaseModelValidator by level:
+2021-06-02 18:38:10.0083 Debug Trace => fileTarget
+2021-06-02 18:38:10.0083 Debug Debug => fileTarget
+2021-06-02 18:38:10.0083 Debug Info => fileTarget
+2021-06-02 18:38:10.0083 Debug Warn => fileTarget
+2021-06-02 18:38:10.0083 Debug Error => fileTarget
+2021-06-02 18:38:10.0083 Debug Fatal => fileTarget
+2021-06-02 18:38:10.0227 Debug Targets for LeaseManagerAPI.Controllers.LeaseController by level:
+2021-06-02 18:38:10.0227 Debug Trace => fileTarget
+2021-06-02 18:38:10.0227 Debug Debug => fileTarget
+2021-06-02 18:38:10.0227 Debug Info => fileTarget
+2021-06-02 18:38:10.0227 Debug Warn => fileTarget
+2021-06-02 18:38:10.0227 Debug Error => fileTarget
+2021-06-02 18:38:10.0227 Debug Fatal => fileTarget
+2021-06-02 18:38:10.1516 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:38:10.1516 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector by level:
+2021-06-02 18:38:10.1516 Debug Trace => fileTarget
+2021-06-02 18:38:10.1516 Debug Debug => fileTarget
+2021-06-02 18:38:10.1516 Debug Info => fileTarget
+2021-06-02 18:38:10.1516 Debug Warn => fileTarget
+2021-06-02 18:38:10.1516 Debug Error => fileTarget
+2021-06-02 18:38:10.1516 Debug Fatal => fileTarget
+2021-06-02 18:38:10.1516 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor by level:
+2021-06-02 18:38:10.1516 Debug Trace => fileTarget
+2021-06-02 18:38:10.1516 Debug Debug => fileTarget
+2021-06-02 18:38:10.1516 Debug Info => fileTarget
+2021-06-02 18:38:10.1516 Debug Warn => fileTarget
+2021-06-02 18:38:10.1516 Debug Error => fileTarget
+2021-06-02 18:38:10.1516 Debug Fatal => fileTarget
+2021-06-02 18:38:20.2997 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:41:45.6183 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:42:44.4226 Info Message Template Auto Format enabled
+2021-06-02 18:42:44.4354 Info Loading assembly: Nlog.Web.AspNetCore
+2021-06-02 18:42:44.4354 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-06-02 18:42:44.4580 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4619 Trace Scanning LongDateLayoutRenderer 'Layout Renderer: ${longdate}'
+2021-06-02 18:42:44.4619 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.uppercase' to 'true'
+2021-06-02 18:42:44.4619 Trace Wrapping NLog.LayoutRenderers.LevelLayoutRenderer with NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper
+2021-06-02 18:42:44.4619 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4619 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.4619 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4762 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:42:44.4762 Trace  Scanning Property Inner 'SimpleLayout=Layout Renderer: ${level}' NLog.Layouts
+2021-06-02 18:42:44.4762 Trace  Scanning SimpleLayout 'SimpleLayout=Layout Renderer: ${level}'
+2021-06-02 18:42:44.4762 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.4762 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.4762 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4762 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:42:44.4762 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4762 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:42:44.4956 Debug Setting 'NLog.Targets.FileTarget.name' to 'fileTarget'
+2021-06-02 18:42:44.4956 Debug Setting 'NLog.Targets.FileTarget.fileName' to '${basedir}/logs/logfile.txt'
+2021-06-02 18:42:44.4956 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4956 Trace Scanning BaseDirLayoutRenderer 'Layout Renderer: ${basedir}'
+2021-06-02 18:42:44.4956 Debug Setting 'NLog.Targets.FileTarget.maxArchiveFiles' to '4'
+2021-06-02 18:42:44.4956 Debug Setting 'NLog.Targets.FileTarget.archiveEvery' to 'Day'
+2021-06-02 18:42:44.4956 Debug Setting 'NLog.Targets.FileTarget.layout' to '${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'
+2021-06-02 18:42:44.4956 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4956 Trace Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-06-02 18:42:44.4956 Debug Setting 'NLog.LayoutRenderers.Wrappers.UppercaseLayoutRendererWrapper.Inner' to '${level}'
+2021-06-02 18:42:44.4956 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.4956 Trace Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.5079 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.5079 Trace Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:42:44.5079 Trace  Scanning Property Inner ''${level}'' NLog.Layouts
+2021-06-02 18:42:44.5220 Trace  Scanning SimpleLayout ''${level}''
+2021-06-02 18:42:44.5220 Trace   Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.5220 Trace   Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.5220 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.5220 Trace Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:42:44.5220 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.5220 Trace Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:42:44.5577 Debug Setting 'NLog.LayoutRenderers.ExceptionLayoutRenderer.format' to 'tostring'
+2021-06-02 18:42:44.5577 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.5727 Trace Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2021-06-02 18:42:44.5727 Trace  Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2021-06-02 18:42:44.5727 Info Adding target FileTarget(Name=fileTarget)
+2021-06-02 18:42:44.5727 Debug Registered target fileTarget: NLog.Targets.FileTarget
+2021-06-02 18:42:44.5727 Trace ParseRulesElement
+2021-06-02 18:42:44.6327 Debug Watching path 'C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1' filter 'NLog.config' for changes.
+2021-06-02 18:42:44.6327 Debug --- NLog configuration dump ---
+2021-06-02 18:42:44.6327 Debug Targets:
+2021-06-02 18:42:44.6327 Debug File Target[fileTarget]
+2021-06-02 18:42:44.6327 Debug Rules:
+2021-06-02 18:42:44.6327 Debug logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ fileTarget ]
+2021-06-02 18:42:44.6327 Debug --- End of NLog configuration dump ---
+2021-06-02 18:42:44.6327 Trace FindReachableObject<System.Object>:
+2021-06-02 18:42:44.6480 Trace Scanning LoggingRule 'logNamePattern: (:All) levels: [ Trace Debug Info Warn Error Fatal ] appendTo: [ fileTarget ]'
+2021-06-02 18:42:44.6480 Trace  Scanning Property Targets 'System.Collections.Generic.List`1[NLog.Targets.Target]' System.Collections.Generic
+2021-06-02 18:42:44.6480 Trace  Scanning FileTarget 'File Target[fileTarget]'
+2021-06-02 18:42:44.6480 Trace   Scanning Property FileName ''${basedir}/logs/logfile.txt'' NLog.Layouts
+2021-06-02 18:42:44.6480 Trace   Scanning SimpleLayout ''${basedir}/logs/logfile.txt''
+2021-06-02 18:42:44.6480 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.6480 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.6480 Trace   Scanning Property Layout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'' NLog.Layouts
+2021-06-02 18:42:44.6480 Trace   Scanning SimpleLayout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}''
+2021-06-02 18:42:44.6480 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.6480 Trace    Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-06-02 18:42:44.6480 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.6480 Trace    Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:42:44.6480 Trace     Scanning Property Inner ''${level}'' NLog.Layouts
+2021-06-02 18:42:44.6480 Trace     Scanning SimpleLayout ''${level}''
+2021-06-02 18:42:44.6480 Trace      Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.6480 Trace      Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.6480 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.6632 Trace    Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:42:44.6632 Trace    Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.6632 Trace    Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:42:44.6632 Trace    Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2021-06-02 18:42:44.6632 Trace     Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2021-06-02 18:42:44.6632 Trace   Scanning Property LineEnding 'Default' NLog.Targets
+2021-06-02 18:42:44.6819 Trace  Scanning Property ChildRules 'System.Collections.Generic.List`1[NLog.Config.LoggingRule]' System.Collections.Generic
+2021-06-02 18:42:44.6819 Trace  Scanning Property Filters 'System.Collections.Generic.List`1[NLog.Filters.Filter]' System.Collections.Generic
+2021-06-02 18:42:44.6819 Info Validating config: TargetNames=fileTarget, ConfigItems=15, FilePath=C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\NLog.config
+2021-06-02 18:42:44.6819 Debug Unused target checking is started... Rule Count: 1, Target Count: 1
+2021-06-02 18:42:44.6819 Debug Unused target checking is completed. Total Rule Count: 1, Total Target Count: 1, Unused Target Count: 0
+2021-06-02 18:42:44.6819 Trace Initializing Layout Renderer: ${exception}
+2021-06-02 18:42:44.6819 Trace Initializing Layout Renderer: ${message}
+2021-06-02 18:42:44.6964 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:42:44.6964 Trace Initializing Layout Renderer: ${logger}
+2021-06-02 18:42:44.6964 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:42:44.6964 Trace Initializing Layout Renderer: ${level}
+2021-06-02 18:42:44.6964 Trace Initializing '${level}'
+2021-06-02 18:42:44.6964 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.6964 Trace Scanning SimpleLayout ''${level}''
+2021-06-02 18:42:44.6964 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.6964 Trace  Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.7109 Trace Initializing Layout Renderer: ${uppercase}
+2021-06-02 18:42:44.7109 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:42:44.7109 Trace Initializing Layout Renderer: ${shortdate}
+2021-06-02 18:42:44.7109 Trace Initializing '${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'
+2021-06-02 18:42:44.7109 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.7109 Trace Scanning SimpleLayout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}''
+2021-06-02 18:42:44.7109 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.7109 Trace  Scanning ShortDateLayoutRenderer 'Layout Renderer: ${shortdate}'
+2021-06-02 18:42:44.7109 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.7109 Trace  Scanning UppercaseLayoutRendererWrapper 'Layout Renderer: ${uppercase}'
+2021-06-02 18:42:44.7109 Trace   Scanning Property Inner ''${level}'' NLog.Layouts
+2021-06-02 18:42:44.7109 Trace   Scanning SimpleLayout ''${level}''
+2021-06-02 18:42:44.7109 Trace    Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.7109 Trace    Scanning LevelLayoutRenderer 'Layout Renderer: ${level}'
+2021-06-02 18:42:44.7109 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.7109 Trace  Scanning LoggerNameLayoutRenderer 'Layout Renderer: ${logger}'
+2021-06-02 18:42:44.7109 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.7109 Trace  Scanning MessageLayoutRenderer 'Layout Renderer: ${message}'
+2021-06-02 18:42:44.7109 Trace  Scanning ExceptionLayoutRenderer 'Layout Renderer: ${exception}'
+2021-06-02 18:42:44.7109 Trace   Scanning Property Formats 'System.Collections.Generic.List`1[NLog.Config.ExceptionRenderingFormat]' System.Collections.Generic
+2021-06-02 18:42:44.7109 Trace Initializing Layout Renderer: ${literal}
+2021-06-02 18:42:44.7109 Trace Initializing '${basedir}/logs/logfile.txt'
+2021-06-02 18:42:44.7109 Trace FindReachableObject<NLog.Internal.IRenderable>:
+2021-06-02 18:42:44.7109 Trace Scanning SimpleLayout ''${basedir}/logs/logfile.txt''
+2021-06-02 18:42:44.7109 Trace  Scanning Property Renderers 'System.Collections.ObjectModel.ReadOnlyCollection`1[NLog.LayoutRenderers.LayoutRenderer]' System.Collections.ObjectModel
+2021-06-02 18:42:44.7109 Trace  Scanning LiteralLayoutRenderer 'Layout Renderer: ${literal}'
+2021-06-02 18:42:44.7109 Trace Initializing File Target[fileTarget]
+2021-06-02 18:42:44.7271 Trace FindReachableObject<NLog.Layouts.Layout>:
+2021-06-02 18:42:44.7271 Trace Scanning FileTarget 'File Target[fileTarget]'
+2021-06-02 18:42:44.7271 Trace  Scanning Property FileName ''${basedir}/logs/logfile.txt'' NLog.Layouts
+2021-06-02 18:42:44.7271 Trace  Scanning SimpleLayout ''${basedir}/logs/logfile.txt''
+2021-06-02 18:42:44.7271 Trace  Scanning Property Layout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}'' NLog.Layouts
+2021-06-02 18:42:44.7271 Trace  Scanning SimpleLayout ''${shortDate}|${uppercase:${level}}|${logger}|${message}${exception:format=tostring}''
+2021-06-02 18:42:44.7271 Trace  Scanning Property LineEnding 'Default' NLog.Targets
+2021-06-02 18:42:44.7271 Trace File Target[fileTarget] has 2 layouts
+2021-06-02 18:42:44.7271 Trace FileTarget(Name=fileTarget): Using appenderFactory: NLog.Internal.FileAppenders.RetryingMultiProcessFileAppender+Factory
+2021-06-02 18:42:44.7452 Debug Targets for LeaseManagerAPI.Program by level:
+2021-06-02 18:42:44.7452 Debug Trace => fileTarget
+2021-06-02 18:42:44.7452 Debug Debug => fileTarget
+2021-06-02 18:42:44.7452 Debug Info => fileTarget
+2021-06-02 18:42:44.7452 Debug Warn => fileTarget
+2021-06-02 18:42:44.7452 Debug Error => fileTarget
+2021-06-02 18:42:44.7452 Debug Fatal => fileTarget
+2021-06-02 18:42:47.0740 Debug ScanAssembly('NLog.Web.AspNetCore, Version=4.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-06-02 18:42:47.0903 Debug Hide assemblies for callsite
+2021-06-02 18:42:47.0903 Debug ScanAssembly('NLog.Extensions.Logging, Version=1.0.0.0, Culture=neutral, PublicKeyToken=5120e14c03d0593c')
+2021-06-02 18:42:47.0903 Debug Targets for Microsoft.Extensions.Hosting.Internal.ApplicationLifetime by level:
+2021-06-02 18:42:47.0903 Debug Trace => fileTarget
+2021-06-02 18:42:47.0903 Debug Debug => fileTarget
+2021-06-02 18:42:47.0903 Debug Info => fileTarget
+2021-06-02 18:42:47.0903 Debug Warn => fileTarget
+2021-06-02 18:42:47.0903 Debug Error => fileTarget
+2021-06-02 18:42:47.0903 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1008 Debug Targets for Microsoft.Extensions.Hosting.Internal.Host by level:
+2021-06-02 18:42:47.1008 Debug Trace => fileTarget
+2021-06-02 18:42:47.1008 Debug Debug => fileTarget
+2021-06-02 18:42:47.1008 Debug Info => fileTarget
+2021-06-02 18:42:47.1008 Debug Warn => fileTarget
+2021-06-02 18:42:47.1008 Debug Error => fileTarget
+2021-06-02 18:42:47.1008 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1008 Debug Targets for Microsoft.Hosting.Lifetime by level:
+2021-06-02 18:42:47.1008 Debug Trace => fileTarget
+2021-06-02 18:42:47.1008 Debug Debug => fileTarget
+2021-06-02 18:42:47.1008 Debug Info => fileTarget
+2021-06-02 18:42:47.1008 Debug Warn => fileTarget
+2021-06-02 18:42:47.1008 Debug Error => fileTarget
+2021-06-02 18:42:47.1008 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1008 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Transport.Sockets by level:
+2021-06-02 18:42:47.1008 Debug Trace => fileTarget
+2021-06-02 18:42:47.1008 Debug Debug => fileTarget
+2021-06-02 18:42:47.1008 Debug Info => fileTarget
+2021-06-02 18:42:47.1008 Debug Warn => fileTarget
+2021-06-02 18:42:47.1008 Debug Error => fileTarget
+2021-06-02 18:42:47.1008 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1250 Debug Targets for Microsoft.AspNetCore.Server.Kestrel by level:
+2021-06-02 18:42:47.1250 Debug Trace => fileTarget
+2021-06-02 18:42:47.1250 Debug Debug => fileTarget
+2021-06-02 18:42:47.1250 Debug Info => fileTarget
+2021-06-02 18:42:47.1250 Debug Warn => fileTarget
+2021-06-02 18:42:47.1250 Debug Error => fileTarget
+2021-06-02 18:42:47.1250 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1250 Debug Targets for Microsoft.AspNetCore.Hosting.Diagnostics by level:
+2021-06-02 18:42:47.1250 Debug Trace => fileTarget
+2021-06-02 18:42:47.1315 Debug Debug => fileTarget
+2021-06-02 18:42:47.1315 Debug Info => fileTarget
+2021-06-02 18:42:47.1315 Debug Warn => fileTarget
+2021-06-02 18:42:47.1315 Debug Error => fileTarget
+2021-06-02 18:42:47.1315 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1646 Debug Targets for Microsoft.AspNetCore.Mvc.MvcOptions by level:
+2021-06-02 18:42:47.1646 Debug Trace => fileTarget
+2021-06-02 18:42:47.1646 Debug Debug => fileTarget
+2021-06-02 18:42:47.1646 Debug Info => fileTarget
+2021-06-02 18:42:47.1646 Debug Warn => fileTarget
+2021-06-02 18:42:47.1646 Debug Error => fileTarget
+2021-06-02 18:42:47.1646 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1646 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.SystemTextJsonInputFormatter by level:
+2021-06-02 18:42:47.1646 Debug Trace => fileTarget
+2021-06-02 18:42:47.1646 Debug Debug => fileTarget
+2021-06-02 18:42:47.1646 Debug Info => fileTarget
+2021-06-02 18:42:47.1646 Debug Warn => fileTarget
+2021-06-02 18:42:47.1646 Debug Error => fileTarget
+2021-06-02 18:42:47.1646 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1922 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonPatchInputFormatter by level:
+2021-06-02 18:42:47.1922 Debug Trace => fileTarget
+2021-06-02 18:42:47.1922 Debug Debug => fileTarget
+2021-06-02 18:42:47.1922 Debug Info => fileTarget
+2021-06-02 18:42:47.1922 Debug Warn => fileTarget
+2021-06-02 18:42:47.1922 Debug Error => fileTarget
+2021-06-02 18:42:47.1922 Debug Fatal => fileTarget
+2021-06-02 18:42:47.1949 Debug Targets for Microsoft.AspNetCore.Mvc.Formatters.NewtonsoftJsonInputFormatter by level:
+2021-06-02 18:42:47.1949 Debug Trace => fileTarget
+2021-06-02 18:42:47.1949 Debug Debug => fileTarget
+2021-06-02 18:42:47.1949 Debug Info => fileTarget
+2021-06-02 18:42:47.1949 Debug Warn => fileTarget
+2021-06-02 18:42:47.1949 Debug Error => fileTarget
+2021-06-02 18:42:47.1949 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3153 Debug Targets for Microsoft.AspNetCore.Routing.EndpointMiddleware by level:
+2021-06-02 18:42:47.3153 Debug Trace => fileTarget
+2021-06-02 18:42:47.3153 Debug Debug => fileTarget
+2021-06-02 18:42:47.3153 Debug Info => fileTarget
+2021-06-02 18:42:47.3153 Debug Warn => fileTarget
+2021-06-02 18:42:47.3153 Debug Error => fileTarget
+2021-06-02 18:42:47.3153 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3358 Debug Targets for Microsoft.AspNetCore.StaticFiles.StaticFileMiddleware by level:
+2021-06-02 18:42:47.3358 Debug Trace => fileTarget
+2021-06-02 18:42:47.3358 Debug Debug => fileTarget
+2021-06-02 18:42:47.3358 Debug Info => fileTarget
+2021-06-02 18:42:47.3358 Debug Warn => fileTarget
+2021-06-02 18:42:47.3358 Debug Error => fileTarget
+2021-06-02 18:42:47.3358 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3358 Debug Targets for Microsoft.AspNetCore.Cors.Infrastructure.CorsService by level:
+2021-06-02 18:42:47.3358 Debug Trace => fileTarget
+2021-06-02 18:42:47.3358 Debug Debug => fileTarget
+2021-06-02 18:42:47.3358 Debug Info => fileTarget
+2021-06-02 18:42:47.3358 Debug Warn => fileTarget
+2021-06-02 18:42:47.3358 Debug Error => fileTarget
+2021-06-02 18:42:47.3358 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3358 Debug Targets for Microsoft.AspNetCore.Cors.Infrastructure.CorsMiddleware by level:
+2021-06-02 18:42:47.3509 Debug Trace => fileTarget
+2021-06-02 18:42:47.3509 Debug Debug => fileTarget
+2021-06-02 18:42:47.3509 Debug Info => fileTarget
+2021-06-02 18:42:47.3509 Debug Warn => fileTarget
+2021-06-02 18:42:47.3509 Debug Error => fileTarget
+2021-06-02 18:42:47.3509 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3509 Debug Targets for Microsoft.AspNetCore.Routing.EndpointRoutingMiddleware by level:
+2021-06-02 18:42:47.3509 Debug Trace => fileTarget
+2021-06-02 18:42:47.3509 Debug Debug => fileTarget
+2021-06-02 18:42:47.3509 Debug Info => fileTarget
+2021-06-02 18:42:47.3509 Debug Warn => fileTarget
+2021-06-02 18:42:47.3509 Debug Error => fileTarget
+2021-06-02 18:42:47.3509 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3662 Debug Targets for Microsoft.AspNetCore.Diagnostics.DeveloperExceptionPageMiddleware by level:
+2021-06-02 18:42:47.3662 Debug Trace => fileTarget
+2021-06-02 18:42:47.3662 Debug Debug => fileTarget
+2021-06-02 18:42:47.3662 Debug Info => fileTarget
+2021-06-02 18:42:47.3662 Debug Warn => fileTarget
+2021-06-02 18:42:47.3662 Debug Error => fileTarget
+2021-06-02 18:42:47.3662 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3662 Debug Targets for Microsoft.AspNetCore.Server.IISIntegration.IISMiddleware by level:
+2021-06-02 18:42:47.3662 Debug Trace => fileTarget
+2021-06-02 18:42:47.3662 Debug Debug => fileTarget
+2021-06-02 18:42:47.3662 Debug Info => fileTarget
+2021-06-02 18:42:47.3662 Debug Warn => fileTarget
+2021-06-02 18:42:47.3662 Debug Error => fileTarget
+2021-06-02 18:42:47.3662 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3662 Debug Targets for Microsoft.AspNetCore.HttpOverrides.ForwardedHeadersMiddleware by level:
+2021-06-02 18:42:47.3662 Debug Trace => fileTarget
+2021-06-02 18:42:47.3662 Debug Debug => fileTarget
+2021-06-02 18:42:47.3662 Debug Info => fileTarget
+2021-06-02 18:42:47.3662 Debug Warn => fileTarget
+2021-06-02 18:42:47.3662 Debug Error => fileTarget
+2021-06-02 18:42:47.3662 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3662 Debug Targets for Microsoft.AspNetCore.HostFiltering.HostFilteringMiddleware by level:
+2021-06-02 18:42:47.3662 Debug Trace => fileTarget
+2021-06-02 18:42:47.3662 Debug Debug => fileTarget
+2021-06-02 18:42:47.3662 Debug Info => fileTarget
+2021-06-02 18:42:47.3662 Debug Warn => fileTarget
+2021-06-02 18:42:47.3662 Debug Error => fileTarget
+2021-06-02 18:42:47.3662 Debug Fatal => fileTarget
+2021-06-02 18:42:47.3662 Debug Targets for Microsoft.AspNetCore.Server.Kestrel.Core.KestrelServer by level:
+2021-06-02 18:42:47.3662 Debug Trace => fileTarget
+2021-06-02 18:42:47.3662 Debug Debug => fileTarget
+2021-06-02 18:42:47.3662 Debug Info => fileTarget
+2021-06-02 18:42:47.3818 Debug Warn => fileTarget
+2021-06-02 18:42:47.3818 Debug Error => fileTarget
+2021-06-02 18:42:47.3818 Debug Fatal => fileTarget
+2021-06-02 18:42:47.4351 Debug FileTarget(Name=fileTarget): Preparing for new file 'C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt'
+2021-06-02 18:42:47.4351 Trace FileTarget: extracted sequenceNumber: 0 from file 'C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\logs\logfile.txt'
+2021-06-02 18:42:47.4569 Debug Creating file appender: C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt
+2021-06-02 18:42:47.4731 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:42:47.4757 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:42:47.4757 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:42:47.4757 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:42:47.6625 Debug Targets for Microsoft.AspNetCore.Routing.Matching.DfaMatcher by level:
+2021-06-02 18:42:47.6625 Debug Trace => fileTarget
+2021-06-02 18:42:47.6631 Debug Debug => fileTarget
+2021-06-02 18:42:47.6631 Debug Info => fileTarget
+2021-06-02 18:42:47.6631 Debug Warn => fileTarget
+2021-06-02 18:42:47.6631 Debug Error => fileTarget
+2021-06-02 18:42:47.6631 Debug Fatal => fileTarget
+2021-06-02 18:42:47.6902 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ModelBinderFactory by level:
+2021-06-02 18:42:47.6902 Debug Trace => fileTarget
+2021-06-02 18:42:47.6902 Debug Debug => fileTarget
+2021-06-02 18:42:47.6902 Debug Info => fileTarget
+2021-06-02 18:42:47.6902 Debug Warn => fileTarget
+2021-06-02 18:42:47.6902 Debug Error => fileTarget
+2021-06-02 18:42:47.6902 Debug Fatal => fileTarget
+2021-06-02 18:42:47.6975 Debug Targets for Microsoft.AspNetCore.Mvc.ModelBinding.ParameterBinder by level:
+2021-06-02 18:42:47.6975 Debug Trace => fileTarget
+2021-06-02 18:42:47.6975 Debug Debug => fileTarget
+2021-06-02 18:42:47.6975 Debug Info => fileTarget
+2021-06-02 18:42:47.6975 Debug Warn => fileTarget
+2021-06-02 18:42:47.6975 Debug Error => fileTarget
+2021-06-02 18:42:47.6975 Debug Fatal => fileTarget
+2021-06-02 18:42:47.6975 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ControllerActionInvoker by level:
+2021-06-02 18:42:47.6975 Debug Trace => fileTarget
+2021-06-02 18:42:47.6975 Debug Debug => fileTarget
+2021-06-02 18:42:47.6975 Debug Info => fileTarget
+2021-06-02 18:42:47.6975 Debug Warn => fileTarget
+2021-06-02 18:42:47.6975 Debug Error => fileTarget
+2021-06-02 18:42:47.6975 Debug Fatal => fileTarget
+2021-06-02 18:42:47.6975 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ClientErrorResultFilter by level:
+2021-06-02 18:42:47.6975 Debug Trace => fileTarget
+2021-06-02 18:42:47.6975 Debug Debug => fileTarget
+2021-06-02 18:42:47.6975 Debug Info => fileTarget
+2021-06-02 18:42:47.6975 Debug Warn => fileTarget
+2021-06-02 18:42:47.6975 Debug Error => fileTarget
+2021-06-02 18:42:47.6975 Debug Fatal => fileTarget
+2021-06-02 18:42:47.6975 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ModelStateInvalidFilter by level:
+2021-06-02 18:42:47.6975 Debug Trace => fileTarget
+2021-06-02 18:42:47.6975 Debug Debug => fileTarget
+2021-06-02 18:42:47.6975 Debug Info => fileTarget
+2021-06-02 18:42:47.6975 Debug Warn => fileTarget
+2021-06-02 18:42:47.6975 Debug Error => fileTarget
+2021-06-02 18:42:47.6975 Debug Fatal => fileTarget
+2021-06-02 18:42:47.7158 Debug Targets for LeaseManagerAPI.Helpers.LeaseModelValidator by level:
+2021-06-02 18:42:47.7158 Debug Trace => fileTarget
+2021-06-02 18:42:47.7158 Debug Debug => fileTarget
+2021-06-02 18:42:47.7158 Debug Info => fileTarget
+2021-06-02 18:42:47.7158 Debug Warn => fileTarget
+2021-06-02 18:42:47.7158 Debug Error => fileTarget
+2021-06-02 18:42:47.7158 Debug Fatal => fileTarget
+2021-06-02 18:42:47.7158 Debug Targets for LeaseManagerAPI.Controllers.LeaseController by level:
+2021-06-02 18:42:47.7158 Debug Trace => fileTarget
+2021-06-02 18:42:47.7158 Debug Debug => fileTarget
+2021-06-02 18:42:47.7158 Debug Info => fileTarget
+2021-06-02 18:42:47.7158 Debug Warn => fileTarget
+2021-06-02 18:42:47.7158 Debug Error => fileTarget
+2021-06-02 18:42:47.7158 Debug Fatal => fileTarget
+2021-06-02 18:42:48.0241 Trace Opening C:\Workspace\LeaseCrunch\LeaseManagerAPI\LeaseManagerAPI\LeaseManagerAPI\bin\Debug\netcoreapp3.1\/logs/logfile.txt with allowFileSharedWriting=False
+2021-06-02 18:42:48.0241 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.DefaultOutputFormatterSelector by level:
+2021-06-02 18:42:48.0241 Debug Trace => fileTarget
+2021-06-02 18:42:48.0241 Debug Debug => fileTarget
+2021-06-02 18:42:48.0241 Debug Info => fileTarget
+2021-06-02 18:42:48.0241 Debug Warn => fileTarget
+2021-06-02 18:42:48.0241 Debug Error => fileTarget
+2021-06-02 18:42:48.0241 Debug Fatal => fileTarget
+2021-06-02 18:42:48.0241 Debug Targets for Microsoft.AspNetCore.Mvc.Infrastructure.ObjectResultExecutor by level:
+2021-06-02 18:42:48.0241 Debug Trace => fileTarget
+2021-06-02 18:42:48.0241 Debug Debug => fileTarget
+2021-06-02 18:42:48.0241 Debug Info => fileTarget
+2021-06-02 18:42:48.0241 Debug Warn => fileTarget
+2021-06-02 18:42:48.0241 Debug Error => fileTarget
+2021-06-02 18:42:48.0241 Debug Fatal => fileTarget
