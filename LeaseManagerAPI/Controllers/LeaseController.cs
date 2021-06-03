@@ -67,16 +67,20 @@ namespace LeaseManagerAPI.Controllers
                 // calc & export
                 for (var yx = startDate.Year; yx <= endDate.Year; yx++)
                 {
-                    for (var mx = startDate.Month; mx <= endDate.Month; mx++)
+                    // iterate over each month to simplify checks
+                    for (var mx = 1; mx <= 12; mx++)
                     {
+                        // lease wont have started yet
+                        if (yx == startDate.Year && mx <= startDate.Month
+                            || yx == endDate.Year && mx > endDate.Month)
+                        {
+                            _logger.LogInformation($"skipping loop for year '{yx}' and month '{mx}");
+
+                            continue;
+                        }
+
                         var monthlyLeasePayment = new decimal(0.0);
                         var monthlyInterestPayment = new decimal(0.0);
-
-                        if (mx > 12)
-                        {
-                            // safety check :)
-                            break;
-                        }
 
                         foreach(var lease in relevantLeases)
                         {

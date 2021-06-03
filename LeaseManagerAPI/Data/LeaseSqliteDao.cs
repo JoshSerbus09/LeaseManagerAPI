@@ -22,7 +22,7 @@ namespace LeaseManagerAPI.Data
 
         public List<BaseLeaseModel> GetLeasesByDateRange(DateTime start, DateTime end)
         {
-            return _dbContext.Leases?.Where(lease => lease.StartDate >= start && lease.EndDate <= end).ToList();
+            return _dbContext.Leases?.Where(lease => lease.StartDate >= start || lease.EndDate <= end).ToList();
         }
 
         public BaseLeaseModel GetLeaseById(int id)
