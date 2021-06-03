@@ -116,7 +116,7 @@ namespace LeaseManagerAPI.Controllers
 
         private string GetCurrencyString(decimal value)
         {
-            return value.ToString("C", CultureInfo.GetCultureInfoByIetfLanguageTag("en-us"));
+            return value.ToString("##.00");
         }
 
 
