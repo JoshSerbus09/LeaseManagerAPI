@@ -10,7 +10,7 @@ namespace LeaseManagerAPI
     {
         public static void Main(string[] args)
         {
-            var nLog = NLogBuilder.ConfigureNLog("NLog.config").GetCurrentClassLogger();
+            var nLog = NLogBuilder.ConfigureNLog("Nlog.config").GetCurrentClassLogger();
 
             try
             {

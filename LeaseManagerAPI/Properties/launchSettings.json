@@ -2,10 +2,6 @@
   "iisSettings": {
     "windowsAuthentication": false,
     "anonymousAuthentication": true,
-    "iis": {
-      "applicationUrl": "http://localhost/LeaseManagerAPI",
-      "sslPort": 0
-    },
     "iisExpress": {
       "applicationUrl": "http://localhost:25007",
       "sslPort": 0
@@ -14,7 +10,7 @@
   "$schema": "http://json.schemastore.org/launchsettings.json",
   "profiles": {
     "IIS Express": {
-      "commandName": "IISExpress",
+      "commandName": "Executable",
       "launchBrowser": true,
       "launchUrl": "swagger",
       "environmentVariables": {
@@ -22,12 +18,8 @@
       }
     },
     "LeaseManagerAPI": {
-      "commandName": "IISExpress",
-      "launchBrowser": true,
-      "launchUrl": "LeaseManagerApi",
-      "environmentVariables": {
-        "ASPNETCORE_ENVIRONMENT": "Development"
-      },
+      "commandName": "Executable",
+      "commandLineArgs": "LeaseManagerAPI.exe",
       "ancmHostingModel": "InProcess",
       "use64Bit": true,
       "applicationUrl": "http://localhost:5000"
