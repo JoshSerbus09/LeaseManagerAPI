@@ -11,9 +11,9 @@
   - Currently the datasource is built on startup, but this can be modified to inject the service dependencies at run-time.
   
 # Run:
-  - Simply open "LeaseManagerAPI.sln" in visual studio 2019, and run using IISExpress.
-  - The launch page is a swagger UI built from the endpoints. 
-  - This allows you to test API functionality independent of a user interface, or having to manually send requests via Postman (or equivalent)
+  - open solution in Visual Studio 2019 and run in IISExpress
+  OR
+  - open a command line at the root directory and run the command 'dotnet LeaseManagerApi
 
 # Logging:
   - Logs for the application can be found under "${Base Directory}/Logs/logfile.txt"
