@@ -5,13 +5,13 @@
   - Visual Studio 2019
   - .Net Core 3.1
   - .Net Standard 5
-
-# Configure:
-  - The base implementation is a Sqlite data store, but there is an `ILeaseDao` that can be implemented to support another datasource. 
-  - Currently the datasource is built on startup, but this can be modified to inject the service dependencies at run-time.
   
 # Run:
   - open solution in Visual Studio 2019 and run in IISExpress
+    - the application will launch a browser window on the swagger page for the application to allow manual API testing
 
 # Logging:
   - Logs for the application can be found under "${Base Directory}/Logs/logfile.txt"
+
+## _Rough_ Time Estimate:
+~10hrs
