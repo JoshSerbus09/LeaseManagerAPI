@@ -7,7 +7,7 @@ namespace LeaseManagerAPI.Models
 {
     public class LeaseModelOptions
     {
-        public decimal CurrencyLocaleIetString { get; set; }
+        public string CurrencyLocaleIetString { get; set; }
         public decimal MinimumLeasePaymentAmount { get; set; }
         public decimal MaximumLeasePaymentAmount { get; set; }
         public decimal MaximumInterestRate { get; set; }
