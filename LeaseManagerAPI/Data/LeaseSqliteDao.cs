@@ -20,6 +20,11 @@ namespace LeaseManagerAPI.Data
             return _dbContext.Leases?.OrderBy(lease => lease.StartDate).ToList();
         }
 
+        public List<BaseLeaseModel> GetLeasesByDateRange(DateTime start, DateTime end)
+        {
+            return _dbContext.Leases?.Where(lease => lease.StartDate >= start && lease.EndDate <= end).ToList();
+        }
+
         public BaseLeaseModel GetLeaseById(int id)
         {
             return _dbContext.Leases?.FirstOrDefault(lease => lease.Id == id);

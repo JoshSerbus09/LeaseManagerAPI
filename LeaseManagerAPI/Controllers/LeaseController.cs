@@ -6,6 +6,8 @@ using LeaseManagerAPI.Models;
 using LeaseManagerAPI.Helpers;
 using Microsoft.Extensions.Logging;
 using LeaseManagerAPI.Data;
+using System.Text;
+using System.Globalization;
 
 namespace LeaseManagerAPI.Controllers
 {
@@ -41,6 +43,76 @@ namespace LeaseManagerAPI.Controllers
                 return StatusCode(500, $"error while attempting to get all leases.");
             }
         }
+
+        [HttpGet("ExportMonthlyPayments")]
+        public ActionResult ExportMonthlyPayments([FromQuery] DateTime startDate, [FromQuery] DateTime endDate)
+        {
+            if (endDate <= startDate)
+            {
+                _logger.LogError($"invalid date range requested for export. end date must be greater than start date.");
+                return StatusCode(400, $"end date must be later than start date.");
+            }
+
+            try
+            {
+                var relevantLeases = _leaseDao.GetLeasesByDateRange(startDate, endDate);
+
+                var csvBuilder = new StringBuilder();
+
+                csvBuilder.Append(GlobalLeaseConstants.LEASE_EXPORT_HEADER_ROWS);
+                csvBuilder.Append("\n");
+
+                // calc & export
+                for (var yx = startDate.Year; yx <= endDate.Year; yx++)
+                {
+                    for (var mx = startDate.Month; mx <= endDate.Month; mx++)
+                    {
+                        var monthlyLeasePayment = new decimal(0.0);
+                        var monthlyInterestPayment = new decimal(0.0);
+
+                        if (mx > 12)
+                        {
+                            // safety check :)
+                            break;
+                        }
+
+                        foreach(var lease in relevantLeases)
+                        {
+                            if (LeaseCalcluationUtils.LeaseHasPaymentInMonth(yx, mx, lease))
+                            {
+                                monthlyLeasePayment += lease.PaymentAmount;
+
+                                var baseRemainingPaymentAmount = LeaseCalcluationUtils.GetLeaseRemainingPayments(yx, mx, lease) * lease.PaymentAmount;
+
+                                monthlyInterestPayment += decimal.Round(baseRemainingPaymentAmount * lease.InterestRate, 2);
+                            }
+                        }
+
+                        csvBuilder.Append($"{yx}," +
+                            $"{((MonthNameEnum)mx).ToString()}," +
+                            $"{GetCurrencyString(monthlyLeasePayment)}," +
+                            $"{GetCurrencyString(monthlyInterestPayment)}," +
+                            $"{GetCurrencyString((monthlyLeasePayment + monthlyInterestPayment))}" +
+                            $"\n");
+                    }
+                }
+
+                return Ok(csvBuilder.ToString());
+            }
+            catch(Exception ex)
+            {
+                _logger.LogError(ex, $"error while attempting to export leases.");
+                return StatusCode(500, $"error while attempting to export leases.");
+            }
+
+            return Ok();
+        }
+
+        private string GetCurrencyString(decimal value)
+        {
+            return value.ToString("C", CultureInfo.GetCultureInfoByIetfLanguageTag("en-us"));
+        }
+
 
         [HttpGet("GetLeaseById")]
         public ActionResult GetLeaseById([FromQuery] int id)
