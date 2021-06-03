@@ -53,6 +53,8 @@ namespace LeaseManagerAPI.Controllers
                 return StatusCode(400, $"end date must be later than start date.");
             }
 
+            _logger.LogInformation($"attempting to export monthly payments for leases between '{startDate.ToShortDateString()}' and '{endDate.ToShortDateString()}'");
+
             try
             {
                 var relevantLeases = _leaseDao.GetLeasesByDateRange(startDate, endDate);
@@ -105,7 +107,7 @@ namespace LeaseManagerAPI.Controllers
                 return StatusCode(500, $"error while attempting to export leases.");
             }
 
-            return Ok();
+            return NoContent();
         }
 
         private string GetCurrencyString(decimal value)
